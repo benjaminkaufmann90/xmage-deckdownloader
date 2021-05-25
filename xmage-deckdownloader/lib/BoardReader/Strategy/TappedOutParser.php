@@ -9,7 +9,7 @@
 
 			// @TODO: check why $this->getElementsByClassName(...) isn't working properly (below line = quickfix)
 			$count = str_replace('x', '', $member->childNodes->item(1)->textContent); // li.member a.qty -> textContent
-			$name = $this->getElementsByClassName( $member, 'span', 'card' )[0]->childNodes->item(0)->textContent; // li.member span.card a.card-link -> textContent
+			$name = trim($this->getElementsByClassName( $member, 'span', 'card' )[0]->childNodes->item(0)->textContent); // li.member span.card a.card-link -> textContent
 			$cardDBData = $this->cardDB->getDataByName($name);
 
 			$data["count"] = $count;
